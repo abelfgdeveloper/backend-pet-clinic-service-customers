@@ -1,5 +1,12 @@
 server:
   port: 8101
+
+es:
+  abelfgdeveloper:
+    api:
+      title: Customers API
+      description: API para la gestion de los dueños y sus mascotas
+      version: @project.version@
   
 spring:
   application:
@@ -17,3 +24,4 @@ spring:
     installed-by: ${spring.application.name}
   jackson:
     default-property-inclusion: non-null
+    

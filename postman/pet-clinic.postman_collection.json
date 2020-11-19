@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "916016ad-83b5-40c9-a2d4-92a608ade89d",
+		"name": "pet-clinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "owner",
+					"item": [
+						{
+							"name": "Create New Owner",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ceec45f-219d-4fcc-8b5d-b3eead73e0f5",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identificationDocument\": \"11111113A\",\r\n    \"firstName\": \"aaaa\",\r\n    \"lastName\": \"aaaa\",\r\n    \"telephone\": null,\r\n    \"email\": \"test@mail.es\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{pet-clinic-customers-service-url}}/v1/owners",
+									"host": [
+										"{{pet-clinic-customers-service-url}}"
+									],
+									"path": [
+										"v1",
+										"owners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Owner",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d01ecc9d-90b3-4d72-9351-f272766f7814",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d6dcb93c-566e-4f4f-b551-87f1f89f8064",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"aaac\",\r\n    \"lastName\": \"aaaa\",\r\n    \"telephone\": null,\r\n    \"email\": \"test@mail.es\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{pet-clinic-customers-service-url}}/v1/owners/b965910f-4b47-443d-b1ad-f774f48e8f37",
+									"host": [
+										"{{pet-clinic-customers-service-url}}"
+									],
+									"path": [
+										"v1",
+										"owners",
+										"b965910f-4b47-443d-b1ad-f774f48e8f37"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Owner By ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "031eb05c-9e0d-4696-9757-86d7d4374851",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3970c8b6-813f-4c4d-8c1d-865dbcf69eb8",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{pet-clinic-customers-service-url}}/v1/owners/b965910f-4b47-443d-b1ad-f774f48e8f37",
+									"host": [
+										"{{pet-clinic-customers-service-url}}"
+									],
+									"path": [
+										"v1",
+										"owners",
+										"b965910f-4b47-443d-b1ad-f774f48e8f37"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Owners",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cce1c728-dfed-47ac-827c-6aad705119e5",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e203e442-4b5c-4dc9-afc3-9fa450a10ee1",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{pet-clinic-customers-service-url}}/v1/owners",
+									"host": [
+										"{{pet-clinic-customers-service-url}}"
+									],
+									"path": [
+										"v1",
+										"owners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Owner By ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ed50f265-9a11-4872-8563-aa8cb031f788",
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8bf94a10-63bb-4bac-a6cf-efc0b63dcb35",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{pet-clinic-customers-service-url}}/v1/owners/b965910f-4b47-443d-b1ad-f774f48e8f37",
+									"host": [
+										"{{pet-clinic-customers-service-url}}"
+									],
+									"path": [
+										"v1",
+										"owners",
+										"b965910f-4b47-443d-b1ad-f774f48e8f37"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
