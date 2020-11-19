@@ -1,0 +1,19 @@
+server:
+  port: 8101
+  
+spring:
+  application:
+    name: pet-clinic-customers-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/pet_clinic?currentSchema=customers
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    installed-by: ${spring.application.name}
+  jackson:
+    default-property-inclusion: non-null
