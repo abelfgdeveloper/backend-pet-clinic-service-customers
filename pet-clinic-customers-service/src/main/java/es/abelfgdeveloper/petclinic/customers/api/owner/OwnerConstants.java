@@ -10,6 +10,8 @@ public class OwnerConstants {
       "Recurso para actualiza un dueño";
   public static final String OWNER_RESPONSE_RESOURCE_DESCRIPTION =
       "Recurso para mostrar los datos de un dueño";
+  public static final String OWNER_LIST_RESPONSE_RESOURCE_DESCRIPTION =
+      "Recurso para lista de dueños";
 
   // ID
   public static final String OWNER_RESOURCE_ID_DESCRIPTION =
@@ -54,4 +56,7 @@ public class OwnerConstants {
   // Audit Create At
   public static final String OWNER_RESOURCE_AUDIT_CREATE_AT_DESCRIPTION = "Email del dueño";
   public static final String OWNER_RESOURCE_AUDIT_CREATE_AT_EXAMPLE = "2020-19-11";
+
+  // Owner List
+  public static final String OWNER_LIST_DESCRIPTION = "Listado de dueños";
 }

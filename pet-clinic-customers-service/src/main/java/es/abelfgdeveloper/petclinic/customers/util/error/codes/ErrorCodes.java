@@ -2,6 +2,8 @@ package es.abelfgdeveloper.petclinic.customers.util.error.codes;
 
 public class ErrorCodes {
 
+  private ErrorCodes() {}
+
   // Owner
   public static final String CREATE_OWNER_REQUEST_RESOURCE_NOT_NULL = "1";
   public static final String UPDATE_OWNER_REQUEST_RESOURCE_NOT_NULL = "2";

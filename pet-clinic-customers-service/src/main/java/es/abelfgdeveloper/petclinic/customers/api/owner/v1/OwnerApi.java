@@ -1,8 +1,9 @@
 package es.abelfgdeveloper.petclinic.customers.api.owner.v1;
 
-import es.abelfgdeveloper.petclinic.customers.api.generic.resource.ErrorResponseResource;
+import es.abelfgdeveloper.common.resource.ErrorResponseResource;
 import es.abelfgdeveloper.petclinic.customers.api.owner.v1.resource.request.CreateOwnerRequestResource;
 import es.abelfgdeveloper.petclinic.customers.api.owner.v1.resource.request.UpdateOwnerRequestResource;
+import es.abelfgdeveloper.petclinic.customers.api.owner.v1.resource.response.OwnerListResponseResource;
 import es.abelfgdeveloper.petclinic.customers.api.owner.v1.resource.response.OwnerResponseResource;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -10,7 +11,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -174,7 +174,7 @@ public interface OwnerApi {
             content =
                 @Content(
                     mediaType = MediaType.APPLICATION_JSON_VALUE,
-                    schema = @Schema(implementation = OwnerResponseResource.class))),
+                    schema = @Schema(implementation = OwnerListResponseResource.class))),
         @ApiResponse(
             responseCode = "400",
             description = "Bad Request",
@@ -192,5 +192,5 @@ public interface OwnerApi {
       })
   @GetMapping
   @ResponseStatus(HttpStatus.OK)
-  List<OwnerResponseResource> findAll();
+  OwnerListResponseResource findAll();
 }

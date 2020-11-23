@@ -75,6 +75,11 @@
       <artifactId>springdoc-openapi-ui</artifactId>
       <version>${springdoc-openapi-ui.version}</version>
     </dependency>
+    <dependency>
+      <groupId>es.abelfgdeveloper.common.library</groupId>
+      <artifactId>common</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <dependencyManagement>
@@ -144,10 +149,7 @@
                       <minimum>0.70</minimum>
                     </limit>
                   </limits>
-                  <!-- 
-                  <excludes>
-                    <exclude>com.abc.ClassName</exclude>
-                  </excludes>-->
+                  <!-- <excludes> <exclude>com.abc.ClassName</exclude> </excludes> -->
                 </rule>
               </rules>
             </configuration>
